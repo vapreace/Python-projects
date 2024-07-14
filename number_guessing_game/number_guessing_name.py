@@ -1,5 +1,4 @@
-# Game presentation and rules
-
+# Game presented in ASCII art
 ascii_art = [
     ".-. .-..-. .-..-.   .-..----. .----..----.     .---. .-. .-..----. .----. .----..-..-. .-. .---.     .---.   .--.  .-.   .-..----.\n"
     "|  `| || { } ||  `.'  || {}  }| {_  | {}  }   /   __}| { } || {_  { {__  { {__  | ||  `| |/   __}   /   __} / {} \ |  `.'  || {_  \n"
@@ -7,6 +6,7 @@ ascii_art = [
     "`-' `-'`-----'`-' ` `-'`----' `----'`-' `-'    `---' `-----'`----'`----' `----' `-'`-' `-' `---'     `---' `-'  `-'`-' ` `-'`----'\n"
 ]
 
+# Rules of the game
 rules = [
     "Welcome to the Number Guessing Game!",
     "",
@@ -17,9 +17,11 @@ rules = [
     "Let's begin!"
 ]
 
+# Print ascii art
 for line in ascii_art:
     print(line)
 
+# Print rules in a box
 max_length = max(len(rule) for rule in rules)
 print('*' * (max_length + 4))
 for rule in rules:
@@ -27,25 +29,33 @@ for rule in rules:
 print('*' * (max_length + 4))
 print("")
 
-
+# Start the game
 print("Time to choose a number! Can we continue? (Click ENTER when you are ready)")
 input()
 
+# Reset function to start the game again
 def reset():
     print("Are you confused? Let's start again!")
     return 0, 1000, 1
 
 min, max, count = reset()
 
+# Main loop of the game
 while True:
+    # Check if the user is cheating
     if max < min:
         min, max, count = reset()
         continue
+    
+    # Guess the number
     attempt = (max + min) // 2
-
+    
+    # Print the guess and ask for feedback
     print(f"\nIs it {attempt}? Attempt number {count}")
     print("y - yes!\nl - lower!\nh - higer!")
     ans = input()
+    
+    # Check the user's feedback
     if ans == "y":
         break
     elif ans == "l":
@@ -66,4 +76,5 @@ while True:
         print("Wrong input! Let's try one more time.")
         continue
     
+# Print the result - END OF THE GAME
 print(f"\nOh yes! I got it right in {count} attempts. :)")
