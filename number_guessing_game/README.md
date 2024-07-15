@@ -31,10 +31,10 @@ git clone https://github.com/vapreace/Python-projects
 
 ```
 
-Navigate to the `number-guessing-game` directory:
+Navigate to the `number_guessing_game` directory:
 
 ```bash
-cd number-guessing-game
+cd number_guessing_game
 ```
 
 Run the Python script:
