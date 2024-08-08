@@ -10,7 +10,7 @@ This Python script provides a simple countdown timer that prompts the user to en
 
 ## Installation
 
-To run this script, you need Python installed on your computer. If you don't have Python installed, download and install it from [python.org](https://www.python.org/).
+To run this script, you need Python 3.x installed on your computer. If you don't have Python installed, download and install it from [python.org](https://www.python.org/).
 
 Clone this repository to your local machine:
 
@@ -40,3 +40,9 @@ python countdown_timer.py
 ## Contributing
 
 Contributions to the Countdown Timer are welcome! If you have suggestions for improvements or bug fixes, feel free to open an issue or create a pull request.
+
+## Credits
+
+- Hourglass ASCII art sourced from [ASCII Art Archive](https://www.asciiart.eu/miscellaneous/hourglass).
+- ASCII text generated using [TAAG - Text to ASCII Art Generator](https://patorjk.com/software/taag/).
+
