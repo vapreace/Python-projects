@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+*.egg
+*.egg-info
+dist/
+build/
+
+# Virtual environment
+venv/
+.env/
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# MacOS Finder
+.DS_Store
+
+# Windows
+Thumbs.db
