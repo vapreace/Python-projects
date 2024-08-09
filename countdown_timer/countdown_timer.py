@@ -1,5 +1,16 @@
+#! /usr/bin/python
+# **************************************************************************** #
+#                                                                              #
+#   -- countdown_timer.py --                                    /`·.¸          #
+#                                                              /¸...¸`:·       #
+#   By: ines_lemos                                         ¸.·´  ¸   `·.¸.·´)  #
+#   Github: github.com/vapreace                           : © ):´;      ¸  {   #
+#   Linkedin: https://www.linkedin.com/in/ines-s-lemos/    `·.¸ `·  ¸.·´\`·¸)  #
+#   Last updated: 2024-08-09                                   `\\´´\¸.·´      #
+#                                                                              #
+# **************************************************************************** #
+
 import time
-import ascii_art
 
 def countdown(mins, secs):
 	"""
@@ -43,7 +54,24 @@ def valid_input(prompt):
 		except ValueError: # handle invalid input
 			print("Please enter a valid number")
 
-print(ascii_art.ascii_letters[0]) # print the title of the countdown timer
+# Print a countdown timer ASCII art
+print('''
++8-=-=-=-=-=-8+  
+ | ,.-'"'-., |   
+ |/         \|   
+ |\:.     .:/|    _____                   _      _                     
+ | \:::::::/ |   /  __ \                 | |    | |                    
+ |  \:::::/  |   | /  \/ ___  _   _ _ __ | |_ __| | _____      ___ __  
+ |   \:::/   |   | |    / _ \| | | | '_ \| __/ _` |/ _ \ \ /\ / / '_ \ 
+ |    ):(    |   | \__/\ (_) | |_| | | | | || (_| | (_) \ V  V /| | | |
+ |   / . \   |    \____/\___/ \__,_|_| |_|\__\__,_|\___/ \_/\_/ |_| |_|
+ |  /  .  \  |    _   _
+ | /   .   \ |   | | (_)                                               
+ |/   .:.   \|   | |_ _ _ __ ___   ___ _ __                            
+ |\.:::::::./|   | __| | '_ ` _ \ / _ \ '__|                           
+ | '--___--' |   | |_| | | | | | |  __/ |                              
++8-=-=-=-=-=-8+   \__|_|_| |_| |_|\___|_|                              
+''')
 
 # Get the number of minutes and seconds from the user
 minutes = valid_input('Enter the number of minutes: ')
