@@ -1,33 +1,44 @@
-# Game presented in ASCII art
-ascii_art = [
-    ".-. .-..-. .-..-.   .-..----. .----..----.     .---. .-. .-..----. .----. .----..-..-. .-. .---.     .---.   .--.  .-.   .-..----.\n"
-    "|  `| || { } ||  `.'  || {}  }| {_  | {}  }   /   __}| { } || {_  { {__  { {__  | ||  `| |/   __}   /   __} / {} \ |  `.'  || {_  \n"
-    "| |\  || {_} || |\ /| || {}  }| {__ | .-. \   \  {_ }| {_} || {__ .-._} }.-._} }| || |\  |\  {_ }   \  {_ }/  /\  \| |\ /| || {__ \n"
-    "`-' `-'`-----'`-' ` `-'`----' `----'`-' `-'    `---' `-----'`----'`----' `----' `-'`-' `-' `---'     `---' `-'  `-'`-' ` `-'`----'\n"
-]
+#! /usr/bin/python
+# **************************************************************************** #
+#                                                                              #
+#   -- number_guessing_game.py --                               /`·.¸          #
+#                                                              /¸...¸`:·       #
+#   By: ines_lemos                                         ¸.·´  ¸   `·.¸.·´)  #
+#   Github: github.com/vapreace                           : © ):´;      ¸  {   #
+#   Linkedin: https://www.linkedin.com/in/ines-s-lemos/    `·.¸ `·  ¸.·´\`·¸)  #
+#   Last updated: 2024-08-09                                   `\\´´\¸.·´      #
+#                                                                              #
+# **************************************************************************** #
 
-# Rules of the game
-rules = [
-    "Welcome to the Number Guessing Game!",
-    "",
-    "Rules:",
-    "--> You need to think of a number between 0 and 1000",
-    "--> I will try to guess the number you're thinking of in 10 attempts.",
-    "--> After each guess, tell me if I'm correct, or if your number is higher or lower than my guess.",
-    "Let's begin!"
-]
+# Print the game title and rules
+print("""
+.-. .-..-. .-..-.   .-..----. .----..----.
+|  `| || { } ||  `.'  || {}  }| {_  | {}  }
+| |\  || {_} || |\ /| || {}  }| {__ | .-. \\
+`-' `-'`-----'`-' ` `-'`----' `----'`-' `-'
+ .---. .-. .-..----. .----. .----..-..-. .-. .---.
+/   __}| { } || {_  { {__  { {__  | ||  `| |/   __}
+\  {_ }| {_} || {__ .-._} }.-._} }| || |\  |\  {_ }
+ `---' `-----'`----'`----' `----' `-'`-' `-' `---'
+ .---.   .--.  .-.   .-..----.
+/   __} / {} \ |  `.'  || {_  
+\  {_ }/  /\  \| |\ /| || {__ 
+ `---' `-'  `-'`-' ` `-'`----'
+""")
 
-# Print ascii art
-for line in ascii_art:
-    print(line)
-
-# Print rules in a box
-max_length = max(len(rule) for rule in rules)
-print('*' * (max_length + 4))
-for rule in rules:
-    print('* {:<{width}} *'.format(rule.strip(), width=max_length))
-print('*' * (max_length + 4))
-print("")
+print("""
++----------------------------------------------------------+
+| Welcome to the Number Guessing Game!                     |
+|                                                          |
+| Rules:                                                   |
+| --> Think of a number between 0 and 1000                 |
+| --> I will try to guess the number you're thinking of in |
+|     10 attempts.                                         |
+| --> After each guess, tell me if I'm correct, or if your |
+|     number is higher or lower than my guess.             |
+| Let's begin!                                             |
++----------------------------------------------------------+
+""")
 
 # Start the game
 print("Time to choose a number! Can we continue? (Click ENTER when you are ready)")
@@ -35,7 +46,6 @@ input()
 
 # Reset function to start the game again
 def reset():
-    print("Are you confused? Let's start again!")
     return 0, 1000, 1
 
 min, max, count = reset()
@@ -44,6 +54,7 @@ min, max, count = reset()
 while True:
     # Check if the user is cheating
     if max < min:
+        print("It looks like you are cheating... Let's try again!")
         min, max, count = reset()
         continue
     
@@ -52,26 +63,18 @@ while True:
     
     # Print the guess and ask for feedback
     print(f"\nIs it {attempt}? Attempt number {count}")
-    print("y - yes!\nl - lower!\nh - higer!")
-    ans = input()
+    print("y - yes!\nl - lower!\nh - higher!")
+    ans = input().strip().lower()
     
     # Check the user's feedback
     if ans == "y":
         break
     elif ans == "l":
-        if min == ans:
-            min, max, count = reset()
-            continue;
         max = attempt - 1
         count += 1
-        continue
     elif ans == "h":
-        if max == ans:
-            min, max, count = reset()
-            continue
         min = attempt + 1
-        count +=1
-        continue
+        count += 1
     else:
         print("Wrong input! Let's try one more time.")
         continue

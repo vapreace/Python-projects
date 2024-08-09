@@ -4,7 +4,6 @@ This Python script powers a simple number guessing game. The game challenges the
 
 ## Features
 
-- ASCII art introduction for a visually appealing start.
 - Clear and concise rules explanation.
 - Interactive guessing with user feedback to guide the game.
 - Utilizes an efficient algorithm to guess the number within 10 attempts.
