@@ -4,7 +4,7 @@ This Python script, `password_generator.py`, offers a customizable way to genera
 
 ## Features
 
-- **Customizable Length**: Choose any password length between 8 and 20 characters.
+- **Customizable Length**: Choose any password length between 8 and 50 characters.
 - **Character Variety**: Option to include digits, lowercase letters, uppercase letters, and symbols for enhanced security.
 - **User-Friendly**: Prompts guide the user through the customization options, making it easy to specify their preferences.
 - **Validation**: Input validation ensures that user choices are within acceptable parameters.

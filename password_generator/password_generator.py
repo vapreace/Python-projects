@@ -1,12 +1,23 @@
+#! /usr/bin/python
+# **************************************************************************** #
+#                                                                              #
+#   -- password_generator.py --                                 /`·.¸          #
+#                                                              /¸...¸`:·       #
+#   By: ines_lemos                                         ¸.·´  ¸   `·.¸.·´)  #
+#   Github: github.com/vapreace                           : © ):´;      ¸  {   #
+#   Linkedin: https://www.linkedin.com/in/ines-s-lemos/    `·.¸ `·  ¸.·´\`·¸)  #
+#   Last updated: 2024-08-09                                   `\\´´\¸.·´      #
+#                                                                              #
+# **************************************************************************** #
+
 import random
 import string
-import ascii_art
 
 def validate_password_length():
 	"""
 	Prompts the user to enter a desired password length and validates it.
 
-	The function ensures the password length is between 8 and 20 characters.
+	The function ensures the password length is between 8 and 50 characters.
 	If the input is not within this range or is not a number, it prompts the user again until a valid input is provided.
 
 	Returns:
@@ -14,8 +25,8 @@ def validate_password_length():
 	"""
 	while True:
 		try:
-			length = int(input("Enter the length of the password.\nTo ensure security, it should be between 8 and 20 characters: "))
-			if length < 8 or length > 20:
+			length = int(input("Enter the length of the password.\nTo ensure security, it should be between 8 and 50 characters: "))
+			if length < 8 or length > 50:
 				raise ValueError
 			return length
 		except ValueError:
@@ -92,17 +103,22 @@ def generate_password(length, digits, lowercase, uppercase, symbols):
 		generate_another = validate_input("Generate another password? (y/n): ") # Ask the user if they want to generate another password or exit
 	print("Exiting program. Bye!")
 
+# Display the ASCII art title
+print("""
+.----.  .--.   .----. .----..-. . .-. .----. .----. .----.    
+| {}  }/ {} \ { {__  { {__  | |/ \| |/  {}  \| {}  }| {}  \   
+| .--'/  /\  \.-._} }.-._} }|  .'.  |\      /| .-. \|     /   
+`-'   `-'  `-'`----' `----' `-'   `-' `----' `-' `-'`----'    
+ .---. .----..-. .-..----..----.   .--.  .---.  .----. .----. 
+/   __}| {_  |  `| || {_  | {}  } / {} \{_   _}/  {}  \| {}  }
+\  {_ }| {__ | |\  || {__ | .-. \/  /\  \ | |  \      /| .-. \\
+ `---' `----'`-' `-'`----'`-' `-'`-'  `-' `-'   `----' `-' `-'
+""")
 
-def main():
-	"""
-	The main function that runs the password generator program.
-	"""
-	print(ascii_art.ascii_title[0])
-	length = validate_password_length()
-	digits = validate_input("Include digits? (y/n): ")
-	lowercase = validate_input("Include lowercase letters? (y/n): ")
-	uppercase = validate_input("Include uppercase letters? (y/n): ")
-	symbols = validate_input("Include symbols? (y/n): ")
-	generate_password(length, digits, lowercase, uppercase, symbols)
-
-main()
+# Prompt the user for password preferences and generate the password
+length = validate_password_length()
+digits = validate_input("Include digits? (y/n): ")
+lowercase = validate_input("Include lowercase letters? (y/n): ")
+uppercase = validate_input("Include uppercase letters? (y/n): ")
+symbols = validate_input("Include symbols? (y/n): ")
+generate_password(length, digits, lowercase, uppercase, symbols)
