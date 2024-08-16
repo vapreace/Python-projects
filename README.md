@@ -8,10 +8,11 @@ Here is a list of the projects in this repository:
 
 | Project Name | Description |
 | ------------ | ----------- |
-| [🔢 Number guessing name](/number_guessing_game/README.md) | A number guessing game where the user chooses a number between 1 and 1000 and the computer tries to guess it in 10 tries or less. |
-| [🎯 Hangman Game](/hangman_game/README.md) | A hangman game where the user tries to guess a word by guessing letters. |
-| [⏳ Countdown Timer](/countdown_timer/README.md) | A countdown timer that counts down from a specified number of minutes and seconds. |
-| [🕵🏻‍♂️ Password Generator](/password_generator/README.md) | A password generator that generates a password based on user specifications. |
+| [💯 Number guessing name](/number_guessing_game/README.md) | A number guessing game where the user chooses a number between 1 and 1000 and the computer tries to guess it in 10 tries or less. |
+| [🎯 Hangman Game](/hangman_game/) | A hangman game where the user tries to guess a word by guessing letters. |
+| [⏳ Countdown Timer](/countdown_timer/) | A countdown timer that counts down from a specified number of minutes and seconds. |
+| [🕵🏻‍♂️ Password Generator](/password_generator/) | A password generator that generates a password based on user specifications. |
+| [ 🔢 Simple Calculator](/simple_calculator/) | A simple calculator that performs basic arithmetic operations. |
 
 ## Help
 
